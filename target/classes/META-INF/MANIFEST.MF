@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Built-By: admin
+Build-Jdk: 16.0.1
+Implementation-Title: traveling
+Implementation-Version: 1.0
+Implementation-Vendor-Id: sonnampnv22
+Implementation-Vendor: Pivotal Software, Inc.
+Implementation-URL: http://projects.spring.io/spring-boot/traveling/
+Created-By: Maven Integration for Eclipse
+
