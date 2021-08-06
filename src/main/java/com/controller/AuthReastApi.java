@@ -59,9 +59,9 @@ public class AuthReastApi {
 		SecurityContextHolder.getContext().setAuthentication(authentication);
 
 		// tạo jwt token
-		String jwt = jwtProvider.generateJwtToken(authentication); 
-		
-		//trả jwt token
+		String jwt = jwtProvider.generateJwtToken(authentication);
+
+		// trả jwt token
 		return ResponseEntity.ok(new JwtResponse(jwt));
 	}
 
@@ -71,13 +71,9 @@ public class AuthReastApi {
 			return new ResponseEntity<String>("Fail -> Username is already taken!", HttpStatus.BAD_REQUEST);
 		}
 
-		if (userRepository.existsByEmail(signUpRequest.getEmail())) {
-			return new ResponseEntity<String>("Fail -> Email is already in use!", HttpStatus.BAD_REQUEST);
-		}
-
 		// Creating user's account
-		UserEntity user = new UserEntity(signUpRequest.getName(), signUpRequest.getUsername(), signUpRequest.getEmail(),
-				encoder.encode(signUpRequest.getPassword()));
+		UserEntity user = new UserEntity(signUpRequest.getName(), signUpRequest.getUsername(),
+				encoder.encode(signUpRequest.getPassword()), signUpRequest.getPhone(), signUpRequest.getAddress());
 
 		Set<String> strRoles = signUpRequest.getRole();
 		Set<RoleEntity> roles = new HashSet<>();

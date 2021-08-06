@@ -2,30 +2,25 @@ package com.message.request;
 
 import java.util.Set;
 
-import javax.validation.constraints.Size;
-
-import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
 
 public class SignUpForm {
 	@NotBlank
-    @Size(min = 3, max = 50)
-    private String name;
+	private String name;
+
+	@NotBlank
+	private String username;
+    
+    @NotBlank
+	private String password;
 
     @NotBlank
-    @Size(min = 3, max = 50)
-    private String username;
+	private String phone;
 
-    @NotBlank
-    @Size(max = 60)
-    @Email
-    private String email;
+	@NotBlank
+	private String address;
     
     private Set<String> role;
-    
-    @NotBlank
-    @Size(min = 6, max = 40)
-    private String password;
 
     public String getName() {
         return name;
@@ -43,14 +38,6 @@ public class SignUpForm {
         this.username = username;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public String getPassword() {
         return password;
     }
@@ -59,7 +46,23 @@ public class SignUpForm {
         this.password = password;
     }
     
-    public Set<String> getRole() {
+    public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public Set<String> getRole() {
     	return this.role;
     }
     
