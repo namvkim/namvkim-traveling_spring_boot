@@ -16,8 +16,8 @@ public class CommentEntity extends BaseEntity{
 	private String content;
 	
 	@ManyToOne
-	@JoinColumn(name = "image_id")
-	private ImageEntity image;
+	@JoinColumn(name = "destination_id")
+	private DestinationEntity destination;
 	
 	@ManyToOne
 	@JoinColumn(name = "users_id")
@@ -31,12 +31,12 @@ public class CommentEntity extends BaseEntity{
 		this.content = content;
 	}
 
-	public ImageEntity getImage() {
-		return image;
+	public DestinationEntity getDestination() {
+		return destination;
 	}
 
-	public void setImage(ImageEntity image) {
-		this.image = image;
+	public void setDestination(DestinationEntity destination) {
+		this.destination = destination;
 	}
 
 	public UserEntity getUsers() {

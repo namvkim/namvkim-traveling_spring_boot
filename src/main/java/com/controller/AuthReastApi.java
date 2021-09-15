@@ -47,7 +47,7 @@ public class AuthReastApi {
 
 	@Autowired
 	JwtProvider jwtProvider;
-
+	
 	@PostMapping("/signin")
 	public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginForm loginRequest) {
 
@@ -56,7 +56,7 @@ public class AuthReastApi {
 				new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword()));
 
 		// lưu đối tượng xác thực xong
-		SecurityContextHolder.getContext().setAuthentication(authentication);
+		SecurityContextHolder.getContext().setAuthentication(authentication);	
 
 		// tạo jwt token
 		String jwt = jwtProvider.generateJwtToken(authentication);

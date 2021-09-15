@@ -40,6 +40,9 @@ public class UserEntity extends BaseEntity{
 	private Set<RoleEntity> roles = new HashSet<>();
 	
 	@OneToMany(mappedBy = "users")
+	private List<DestinationEntity> destinations = new ArrayList<DestinationEntity>();
+	
+	@OneToMany(mappedBy = "users")
 	private List<CommentEntity> comments = new ArrayList<CommentEntity>();
 
 	public UserEntity() {
